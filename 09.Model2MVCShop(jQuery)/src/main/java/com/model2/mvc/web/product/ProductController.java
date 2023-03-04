@@ -51,15 +51,14 @@ public class ProductController {
 	//==> classpath:config/common.properties  ,  classpath:config/commonservice.xml 참조 할것
 	//==> 아래의 두개를 주석을 풀어 의미를 확인 할것
 	//@Value("#{commonProperties['pageUnit']}")
-	@Value("#{commonProperties['pageUnit'] ?: 3}")
+	@Value("#{commonProperties['pageUnit'] ?: 8}")
 	int pageUnit;
 	
 	//@Value("#{commonProperties['pageSize']}")
-	@Value("#{commonProperties['pageSize'] ?: 2}")
+	@Value("#{commonProperties['pageSize'] ?: 5}")
 	int pageSize;
 	
-	//@RequestMapping("/addUserView.do")
-	//public String addProductView() throws Exception {
+	
 	
 	@RequestMapping(value="addProduct", method=RequestMethod.GET)
 	public String addProduct() throws Exception {
@@ -97,7 +96,7 @@ public class ProductController {
         }*/
 		System.out.println("product는 ?????:  "+product);
 		String path = 
-		"C:\\Users\\user\\git\\07.Model2MVC(URI,pattern)\\07.Model2MVCShop(URI,pattern)\\src\\main\\webapp\\images\\uploadFiles";
+		"C:\\Users\\user\\git\\09Refactoring_jQuery\\09.Model2MVCShop(jQuery)\\src\\main\\webapp\\images\\uploadFiles";
 				System.out.println("uploadFile넘어오는거 뭔가요 ? :" + uploadFile);
 		
 		for(MultipartFile file : uploadFile){
@@ -221,7 +220,7 @@ public class ProductController {
 		System.out.println("/product/updateProduct : POST");
 		//Business Logic
 		String path = 
-				"C:\\Users\\user\\git\\07.Model2MVC(URI,pattern)\\07.Model2MVCShop(URI,pattern)\\src\\main\\webapp\\images\\uploadFiles";
+				"C:\\Users\\user\\git\\09Refactoring_jQuery\\09.Model2MVCShop(jQuery)\\src\\main\\webapp\\images\\uploadFiles";
 						System.out.println("uploadFile넘어오는거 뭔가요 ? :" + uploadFile);
 				
 				for(MultipartFile file : uploadFile){

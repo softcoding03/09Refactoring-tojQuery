@@ -6,10 +6,19 @@
 <title>상품 등록</title>
 
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
+<!--  
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
-<script type="text/javascript" src="../javascript/calendar.js"></script>
+<!--  <script type="text/javascript" src="../javascript/calendar.js"></script>-->
+<!--  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>-->
 
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 <script type="text/javascript">
 
 		function fncAddProduct(){
@@ -59,15 +68,30 @@
 				alert(  $( "td.ct_btn01:contains('가입')" ).html() );
 				resetData();
 			});
-		
-		});
+			
+			
 
+		});
+		
+		$(function(){
+			
+				$("#datepicker").datepicker({
+					altField: "#datepicker" , altFormat: "yy-mm-dd",
+					
+					showButtonPanel: true,
+					currentText: '오늘날짜',
+					closeText: '닫기',
+					dateFormat:"yymmdd"
+				
+				});
+		});
+		
 </script>
 </head>
 
 <body bgcolor="#ffffff" text="#000000">
 
-<form name="detailForm" >
+<form name="detailForm">
 
 <table width="100%" height="37" border="0" cellpadding="0"	cellspacing="0">
 	<tr>
@@ -130,10 +154,11 @@
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
-			<input type="text" name="manuDate" readonly="readonly" class="ct_input_g"  
+			<input type="text" id="datepicker" name="manuDate" readonly="readonly" class="ct_input_g"  
 						style="width: 100px; height: 19px"	maxLength="10" minLength="6"/>
-				&nbsp;<img src="../images/ct_icon_date.gif" width="15" height="15" 
-						onclick="show_calendar('document.detailForm.manuDate', document.detailForm.manuDate.value)"/>
+						
+				<!-- &nbsp;<img src="../images/ct_icon_date.gif" width="15" height="15" name="calander"/>
+						 onclick="show_calendar('document.detailForm.manuDate', document.detailForm.manuDate.value)"-->
 		</td>
 	</tr>
 	<tr>
@@ -175,7 +200,7 @@
 					<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
 				</td>
 				<td background="/images/ct_btnbg02.gif" class="ct_btn01"  style="padding-top: 3px;">
-					<!-- <a href="javascript:fncAddProduct();">등록</a> -->
+				<!-- 	<a href="javascript:fncAddProduct();">등록</a> --> 
 					등록
 				</td>
 				<td width="14" height="23">
